@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+  "
+    />
+    <link rel="stylesheet" href="../public/css/login.css" />
+    <script src="./socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <!-- form register -->
+    <div id="form-modal-register" class="form-modal form-modal-register">
+      <form class="form-register" action="/register" method="POST">
+        <h2 class="login-title"><span>Register</span></h2>
+        <div class="form-content">
+          <div class="form-item">
+            <span>FullName:</span>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Input your full name"
+            />
+          </div>
+          <div class="form-item">
+            <span>UserName:</span>
+            <input type="text" name="userName" placeholder="Input user name" />
+          </div>
+          <div class="form-item">
+            <span>Password:</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="Input your password"
+            />
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="btn" id="btn-login" type="submit">Register</button>
+        </div>
+      </form>
+      <form action="/login" method="GET">
+        <div class="button-bottom-container">
+          <button id="btn-tranform-login" class="btn-tranform" type="submit">
+            Already have an Account? Log in here
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <%if (notice) { %>
+        <div class="notice">
+          <div class="notice-header">
+            <p class="notice-header-title"><%= title %></p>
+            <span>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i
+            ></span>
+          </div>
+          <p class="notice-mes">
+            <%= notice %>
+    
+            <!-- Register fail!. Please try again! -->
+          </p>
+        </div>
+    
+        <% } %>
+    <script src="../public/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"socketMiddleware.js","sourceRoot":"","sources":["../socketMiddleware.ts"],"names":[],"mappings":";;;AAAA,SAAgB,gBAAgB,CAAC,EAAO;IACpC,EAAE,CAAC,EAAE,CAAC,YAAY,EAAE,CAAC,MAAW,EAAE,EAAE;QACpC,OAAO,CAAC,GAAG,CAAC,qBAAqB,EAAE,MAAM,CAAC,EAAE,CAAC,CAAC;IAClD,CAAC,CAAC,CAAA;AACF,CAAC;AAJD,4CAIC"}

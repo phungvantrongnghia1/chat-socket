@@ -1,0 +1,104 @@
+.form-modal{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 3px 0px grey;
+    border-radius: 5px;
+}
+.login-title{
+    text-align: center;
+}
+.login-title span{
+    border-bottom: 1px solid gray;
+    color: green;
+}
+.form{
+    height: 95%;
+    position: relative;
+}
+.form-content{
+    margin-top: 80px;
+}
+.form-item{
+    display: flex;
+    margin: 16px 0;
+    padding: 0 8px;
+    align-items: center;
+}
+.form-item span{
+    width: 30%;
+}
+.form-item input{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.button-container{
+    text-align: right;
+    padding: 0 12px;
+}
+.btn{
+    padding: 8px 26px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+#btn-login{
+    background-color: green;
+    color: white;
+}
+.button-bottom-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.btn-tranform{
+    background-color: transparent;
+    border: none;
+    padding: 6px 0;
+    color: green;
+    cursor: pointer;
+}
+
+.show{
+    opacity: 1;
+    visibility: visible;
+}
+.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.notice{
+    position: absolute;
+    right: 13px;
+    bottom: 11px;
+    width: 300px;
+    height: 100px;
+    box-shadow: 0 0 5px 1px rgba(128, 128, 128, 0.522);
+    border-radius: 5px;
+}
+.notice-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.227);
+    margin-bottom: 6px;
+}
+.notice-header-title{
+    margin: 0;
+}
+.notice-header i {
+    color: red;
+    font-size: 20px;
+}
+.notice-mes{
+    padding:  8px;
+    margin: 0;
+}

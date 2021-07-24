@@ -1,0 +1,49 @@
+datasource db {
+  url      = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                   Int      @id @default(autoincrement())
+  createdAt            DateTime @default(now())
+  email                String   @unique
+  name                 String?
+  password             String
+  Friend_Create_ByUser Friend[] @relation("Friend_create_By_User")
+  Friend_To_User       Friend[] @relation("Friend_To_User")
+  socketId             String?
+  Message_From_User    Header[] @relation("Message_From_User")
+  Message_To_User      Header[] @relation("Message_To_User")
+}
+
+model Friend {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  userId    Int
+  user      User?    @relation("Friend_create_By_User", fields: [userId], references: [id])
+  friendId  Int
+  friend    User     @relation("Friend_To_User", fields: [friendId], references: [id])
+}
+
+model Header {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  fromId    Int
+  from_id   User      @relation("Message_From_User", fields: [fromId], references: [id])
+  toId      Int
+  to_id     User      @relation("Message_To_User", fields: [toId], references: [id])
+  message   Message[]
+}
+
+model Message {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  isFromSender Boolean  @default(false)
+  content      String
+  headerId     Int
+  header       Header   @relation(fields: [headerId], references: [id])
+}
